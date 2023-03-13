@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83B5C6B2-8347-4282-BE4D-EC0EFD5056EB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CooS</RootNamespace>
+    <AssemblyName>kernel</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Architectures\IA32\InterruptManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Architectures\IA32\ServiceHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Architectures\InterruptHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Architectures\IOPort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\FileSystemManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\InterruptManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\ATADevice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\ATAPIController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\ATAPIDevice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\ATAPIException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\ATAPITimeoutException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\CDROM\CdromDevice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\CDROM\CdromMedia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\CDROM\MediaAttributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\CDROM\SenseKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\DeviceBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\DeviceFeatures.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\DeviceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\Harddisk\HarddiskDevice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\Harddisk\HddMedia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\InterruptReason.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\InterruptState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\MediaAccessMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\MediaBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\MediaControlMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\MediaType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\ATAPI\StatusRegister.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\Controllers\DMAController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\Controllers\InterruptController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\Controllers\IntervalTimer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\DisplayAdapters\Generic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\DisplayAdapters\VBE\ModeInfoBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\DisplayAdapters\VBE\PMInfoBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\DisplayAdapters\VBE\VbeInfoBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\KeyboardController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\Keyboard\KeyCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\Keyboard\KeyCodeConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\Keyboard\KeyStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\Keyboard\PS2Keyboard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\Keyboard\ScanCodeConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\PS2\Mouse\PS2Mouse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\StorageDevices\FDD\FloppyDisk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\StorageDevices\FDD\FloppyDiskController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\StorageDevices\FDD\FloppyDiskDrive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\StorageDevices\FDD\ReadDataResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drivers\StorageDevices\FDD\ST0.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Archive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Aspect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\BasePerspective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Book.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\BookInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\CooS\CoosFileSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\CooS\CoosStringFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\CooS\CoosSystemDirectory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\DirectoryAspect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\FileAspect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\FileSystemProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Page.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Partition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\PathInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Perspective.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\PerspectiveFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Storage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IA32Toolkit\Assembler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IA32Toolkit\AssemblerBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IA32Toolkit\Register.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IA32Toolkit\RegMem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Kernel.cs" />
+    <Compile Include="Machine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NotFoundException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolchains\CodeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Toolchains\CodeLabel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnexpectedException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows インストーラ 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Drivers\TimerDevices\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>mono --aot $(TargetPath)
+mv $(TargetPath).dll $(TargetPath).tmp
+$(SolutionDir)makedll\bin\Release\makedll 0x00200000 $(TargetPath).tmp $(TargetPath).dll
+rm $(TargetPath).tmp
+nm $(TargetPath).dll | sort &gt; $(TargetPath).map
+nm $(TargetPath).dll | sort | $(ProjectDir)sectiondump.exe &gt; $(TargetPath).h
+objcopy -O binary -S $(TargetPath).dll $(TargetPath).bin
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
